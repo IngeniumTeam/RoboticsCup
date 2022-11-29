@@ -1,5 +1,20 @@
 @ECHO OFF
-set /p LibrairiesPath=Please enter the full path of the librairy folder: 
-@REM start chrome --app="https://%LibrairiesPath%.com"
-@REM Librairies download
-Powershell.exe -ExecutionPolicy bypass -command "$length = 14; $owner = 'IngeniumTeam'; $repo = New-Object 'object[,]' $length, 2; $repo[0, 0] = '$($owner)/BlackLineSensor'; $repo[1, 0] = '$($owner)/Bluetooth'; $repo[2, 0] = '$($owner)/Button'; $repo[3, 0] = '$($owner)/HCSR04'; $repo[4, 0] = '$($owner)/Joystick'; $repo[5, 0] = '$($owner)/Keybull'; $repo[6, 0] = '$($owner)/Led'; $repo[7, 0] = '$($owner)/Mecanum'; $repo[8, 0] = '$($owner)/Motor'; $repo[9, 0] = '$($owner)/PhotoElectric'; $repo[10, 0] = '$($owner)/Potentiometer'; $repo[11, 0] = '$($owner)/Report'; $repo[12, 0] = 'bblanchon/ArduinoJson'; $repo[13, 0] = 'Chris--A/Keypad'; for ($i = 0; $i -lt $length; $i++); {;     $uri = 'https://api.github.com/repos/$($repo[$i, 0])/releases/latest';     echo $uri;     $release = Invoke-WebRequest -URI $uri | ConvertFrom-Json;     $repo[$i, 1] = $release.tag_name;;     start chrome --app='https://github.com/$($repo[$i, 0])/archive/refs/tags/$($repo[$i, 1]).zip'; }; Start-Sleep -Seconds 20; taskkill /F /IM chrome.exe; for ($i = 0; $i -lt $length; $i++); {;     Expand-Archive -Path 'Downloads/$(($repo[$i, 0] -split '/')[1])-$($repo[$i, 1].substring(1)).zip' -DestinationPath '%LibrairiesPath%' -Force; }"
+set /p sketchPath=Please enter the full path of the arduino sketchbook: 
+set owner=IngeniumTeam
+set libs=%owner%/BlackLineSensor %owner%/Bluetooth %owner%/Button %owner%/HCSR04 %owner%/Joystick %owner%/Keybull %owner%/Led %owner%/Mecanum %owner%/Motor %owner%/PhotoElectric %owner%/Potentiometer %owner%/Report bblanchon/ArduinoJson Chris--A/Keypad
+set repos=%owner%/Bull %owner%/Dozer
+(for %%a in (%libs%) do (
+    echo %%a
+))
+(for %%a in (%repos%) do (
+    echo %%a
+))
+set /p confirm=This program will download and extract the above list of releases in the specified path. Press ENTER to confirm.
+(for %%a in (%libs%) do (
+    powershell -ExecutionPolicy bypass -Command "Invoke-WebRequest https://github.com/%%a/archive/refs/tags/$((Invoke-WebRequest -URI https://api.github.com/repos/%%a/releases/latest | ConvertFrom-Json).tag_name).zip -OutFile lib.zip; Expand-Archive lib.zip -DestinationPath %sketchPath%/librairies -Force"
+))
+(for %%a in (%repos%) do (
+    powershell -ExecutionPolicy bypass -Command "$name=('%%a' -split '/')[1]; $tag=(Invoke-WebRequest -URI https://api.github.com/repos/%%a/releases/latest | ConvertFrom-Json).tag_name; Invoke-WebRequest https://github.com/%%a/archive/refs/tags/$($tag).zip -OutFile lib.zip; Expand-Archive lib.zip -DestinationPath %sketchPath%/ -Force; cd 'C:\Program Files (x86)\Arduino'; start arduino.exe C:\Users\simon\sketchbook\$($name)-$($tag.substring(1))\src\$($name)\$($name).ino"
+))
+del lib.zip
+timeout /t 10
