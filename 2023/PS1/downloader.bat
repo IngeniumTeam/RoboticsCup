@@ -1,8 +1,8 @@
 @ECHO OFF
 set /p sketchPath=Please enter the full path of the arduino sketchbook: 
 set owner=IngeniumTeam
-set libs=%owner%/BlackLineSensor %owner%/Bluetooth %owner%/Button %owner%/HCSR04 %owner%/Joystick %owner%/Keybull %owner%/Led %owner%/Mecanum %owner%/Motor %owner%/PhotoElectric %owner%/Potentiometer %owner%/Report bblanchon/ArduinoJson Chris--A/Keypad
-set repos=%owner%/Bull %owner%/Dozer
+set libs=%owner%/BlackLineSensor %owner%/Bluetooth %owner%/Button %owner%/HCSR04 %owner%/Joystick %owner%/Keybull %owner%/Led %owner%/Mecanum %owner%/Motor %owner%/PhotoElectric %owner%/Potentiometer %owner%/Report bblanchon/ArduinoJson Chris--A/Keypad avishorp/TM1637
+set repos=%owner%/Bull %owner%/Dozer %owner%/Superbowl
 (for %%a in (%libs%) do (
     echo %%a
 ))
