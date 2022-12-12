@@ -2,6 +2,7 @@
 
 ## Paired modules
 ### Slaves
+
 | Type | Number | ADDR             |
 | ---- | ------ | ---------------- |
 | S    | 01     | `98D3:61:F6B64A` |
@@ -9,6 +10,7 @@
 | S    | 03     | `98D3:71:F653B7` |
 
 ### Masters
+
 | Type | Number | BIND             |
 | ---- | ------ | ---------------- |
 | M    | 01     | `98D3:61:F6B64A` |
@@ -20,7 +22,7 @@
 2. Upload an empty sketch via the Arduino IDE
 3. Wire the BT module to the arduino board following the next table:
 
-BT    | Arduino |
+| BT  | Arduino |
 | --- | ------- |
 | RXD | 0/RX    |
 | TXD | 1/TX    |
