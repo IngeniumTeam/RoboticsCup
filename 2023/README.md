@@ -7,8 +7,8 @@
 - [Rules](https://www.coupederobotique.fr/wp-content/uploads/Eurobot2023_Junior_Rules_FR_FINALE.pdf)
 
 ## Files
+- [Table](./Files/table/)
 - [Code archives](./Code/)
-- [Batch files](./PS1/)
 - [Code downloader](./PS1/downloader.bat)
 
 ## Repos (19)
