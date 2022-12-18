@@ -8,7 +8,6 @@
 
 ## Files
 - [Code archives](./Code/)
-- [Batch files](./PS1/)
 - [Code downloader](./PS1/downloader.bat)
 
 ## Repos (19)
