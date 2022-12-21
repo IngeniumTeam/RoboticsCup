@@ -37,6 +37,7 @@
 * [Digit](https://github.com/IngeniumTeam/Digit)
 
 #### External (3)
+* [Arduino/SoftwareSerial](https://docs.arduino.cc/learn/built-in-libraries/software-serial): This library is built into the Arduino IDE
 * [bblanchon/ArduinoJson](https://github.com/bblanchon/ArduinoJson)
 * [Chris--A/Keypad](https://github.com/Chris--A/Keypad)
 * [avishorp/TM1637](https://github.com/avishorp/TM1637)
