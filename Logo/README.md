@@ -1,4 +1,4 @@
 # Logo
 ## Files
-* [jpg](./.jpg)
-* [png](./.png)
+* [jpg](./logo.jpg)
+* [png](./logo.png)
