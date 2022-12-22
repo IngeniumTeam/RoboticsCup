@@ -13,17 +13,3 @@
 * [Bull](./Bull/): The remote control
 * [Dozer](./Dozer/): The robot
 * [Superbowl](./Superbowl/): The basket
-
-## Crew
-<div style="font-family: 'Ingenium', monospace;">
-INGEN!UM
-
-* OCTAVE
-* SOLENE
-* FELIX
-* SIMON
-* MATEJA
-* ELISE
-* AURES
-* LORIC
-<div>
