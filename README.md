@@ -7,7 +7,10 @@
 * [Bluetooth configuration](./BT/)
 
 ## Logo
-[Logo](./Logo/): This is the logo of our team
+[Logo](./Logo/) The official logo of the team
+
+## Font
+[Font](./Font/) The official font of the team
 
 ## Pages
 * [Bull](./Bull/): The remote control

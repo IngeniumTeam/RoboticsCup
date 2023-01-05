@@ -8,11 +8,12 @@
 
 ## Files
 * [Files](./Files/)
-* [Table](./Files/Table/)
+    * [Table](./Files/Table/)
 
-## Codes
-* [Code archives](./Code/)
-* [Code downloader](./PS1/downloader.bat)
+## Code
+* [Code](./Code/)
+    * [Archives](./Code/Archives/)
+    * [Downloaders](./Code/Downloaders/)
 
 ## Repos (19)
 ### Codes (3)
