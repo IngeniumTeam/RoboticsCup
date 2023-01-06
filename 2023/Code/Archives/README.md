@@ -7,3 +7,4 @@ These ZIPs contain all the libraries (to be put in the Arduino libraries folder)
 ## Archives list
 * [v1: 12.3.2022](./12.3.2022)
 * [v2: 12.14.2022](./12.14.2022)
+* [v3: 1.6.2023](./1.6.2023)
