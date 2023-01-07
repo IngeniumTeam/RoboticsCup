@@ -1,13 +1,12 @@
 # Logo
 ## Files
 ### Loric
-* [jpg](./loric/logo.jpg)
-* [png](./loric/logo.png)
-
-### Simon
-#### Static
-* [svg](./simon/static/logo.svg)
-* [html](./simon/static/logo.html)
-
-#### Animated
-* [html](./simon/animated/logo.html)
+#### 500x500
+* [jpg](./loric/logo.500.jpg)
+* [png](./loric/logo.500.png)
+#### 800x600
+* [jpg](./loric/logo.800.jpg)
+* [png](./loric/logo.800.png)
+#### 128x128
+* [jpg](./loric/logo.128.jpg)
+* [png](./loric/logo.128.png)
