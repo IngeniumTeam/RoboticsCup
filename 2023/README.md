@@ -24,7 +24,6 @@
 ### Libraries (16)
 #### Internal (13)
 * [Bluetooth](https://github.com/IngeniumTeam/Bluetooth)
-* [Keybull](https://github.com/IngeniumTeam/Keybull)
 * [Joystick](https://github.com/IngeniumTeam/Joystick)
 * [Led](https://github.com/IngeniumTeam/Led)
 * [Report](https://github.com/IngeniumTeam/Report)
