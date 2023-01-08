@@ -13,4 +13,4 @@
 * [jpg](./loric/logo.800.jpg)
 * [png](./loric/logo.800.png)
 
-[favicon](./loric/logo/logo.128.ico)
+[favicon](./loric/logo.128.ico)
