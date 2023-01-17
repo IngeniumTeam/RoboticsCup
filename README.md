@@ -1,6 +1,7 @@
 # Ingenium
 ## RoboticsCup
 ### Editions
+* [2022](./2022/)
 * [2023](./2023/)
 
 ## Guides
