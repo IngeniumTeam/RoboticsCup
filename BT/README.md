@@ -8,14 +8,18 @@
 | S    | 01     | `98D3:61:F6B64A` |
 | S    | 02     | `98D3:71:F5F110` |
 | S    | 03     | `98D3:71:F653B7` |
+| S    | 04     | `98da:50:01c819` **NOT WORKING** |
+| S    | 05     | `98D3:41:F5AE52` **NOT WORKING** |
 
 ### Masters
 
-| Type | Number | BIND             |
-| ---- | ------ | ---------------- |
-| M    | 01     | `98D3:61:F6B64A` |
-| M    | 02     | `98D3:71:F5F110` |
-| M    | 03     | `98D3:71:F653B7` |
+| Type | Number | BIND                       |
+| ---- | ------ | -------------------------- |
+| M    | 01     | `98D3,61,F6B64A` **S01**   |
+| M    | 02     | `98D3,71,F5F110` **S02**   |
+| M    | 03     | `98D3,71,F653B7` **S03**   |
+| M    | 04     | `98da,50,01c819` **S04** **NOT WORKING** |
+| M    | 05     | `98D3,41,F5AE52` **S05** **NOT WORKING** |
 
 ## Procedure
 1. Choose your arduino board **Warning! Some arduino's board does not work very well: I advise you to use an official Arduino board or an ELEGOO**
@@ -40,7 +44,7 @@ Start with the slave configuration
 | ------------------ | ---------------- | -------------------------------- |
 | `AT+UART=9600,0,0` | `OK`             | Set the bauds rate of the module |
 | `AT+ROLE=0`        | `OK`             | Set the module as slave          |
-| `AT+ADDR`          | `****,**,******` | Get the address of the module **copy it in your notepad to keep it, you will need it** |
+| `AT+ADDR`          | `****:**:******` | Get the address of the module **copy it in your notepad to keep it, you will need it** |
 
 ### Master
 Configure the master to connect it to the slave
@@ -49,4 +53,4 @@ Configure the master to connect it to the slave
 | ------------------------ | ----------------------------------------------- | -------------------------------- |
 | `AT+UART=9600,0,0`       | `OK`                                            | Set the bauds rate of the module |
 | `AT+ROLE=1`              | `OK`                                            | Set the module as master         |
-| `AT+BIND=****,**,******` | *`Nothing, this will end the AT configuration`* | Configure the master to reach the slave's adress |
+| `AT+BIND=****,**,******` | `OK`                                            | Configure the master to reach the slave's adress **In the slave address, replace the points by comas** |
