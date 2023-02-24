@@ -1,4 +1,4 @@
-:root{
+:root {
     --top-nav-color: #fff;
     --top-nav-background-color: #00000030;
     --top-caption-color: #fff;
@@ -48,6 +48,7 @@ header nav h1 {
 header nav .caption {
     color: var(--top-caption-color);
 }
+
 header nav .caption,
 header nav h1 {
     transition-property: color, font-size;
