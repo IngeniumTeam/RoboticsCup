@@ -5,7 +5,7 @@ const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
 let index = 0;
-var interval;
+let interval = 0;
 
 function updateCarousel() {
     container.style.transform = `translateX(${-index * carousel.offsetWidth}px)`;
