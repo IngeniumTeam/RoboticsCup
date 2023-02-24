@@ -51,8 +51,8 @@ main li {
 
 #up a {
     color: inherit;
-    display: contents;
-    vertical-align: middle;
+    display: flex;
+    text-decoration: none;
     width: 100%;
     height: 100%;
 }

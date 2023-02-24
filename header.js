@@ -9,10 +9,6 @@ window.onload = function () {
 }
 function hide() {
     document.querySelector('header nav ul').classList.remove('show');
-    document.querySelector('.account').classList.add('hide');
-}
-function account() {
-    document.querySelector('.logo div.account').classList.toggle('hide');
 }
 window.onscroll = scroll;
 function scroll() {
