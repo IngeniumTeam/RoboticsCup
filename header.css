@@ -62,6 +62,16 @@ header nav .title {
     margin: auto 0;
 }
 
+header nav .title #scroller {
+    margin-top: 10px;
+    font-size: 9px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    justify-content: center;
+}
+
 header nav ul {
     margin: 0;
     padding: 0;
@@ -87,6 +97,10 @@ header nav.scroll {
 
 header nav.scroll .title {
     flex-direction: row;
+}
+
+header nav.scroll .title #scroller {
+    display: none;
 }
 
 header nav.scroll h1 {
