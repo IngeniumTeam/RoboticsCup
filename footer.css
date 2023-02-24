@@ -7,22 +7,33 @@ footer {
     position: relative;
 }
 
-footer #social {
+footer .links {
     position: absolute;
     top: 0;
-    left: 0;
     padding: 20px;
     height: 100%;
     display: flex;
 }
 
-footer #social a {
+footer .links a {
     text-decoration: none;
     color: inherit;
     margin: auto 0;
 }
 
-footer #social a img {
+footer .links a img {
     width: 20px;
     margin: 10px;
+}
+
+footer .links#left {
+    left: 0;
+}
+
+footer .links#right {
+    right: 0;
+}
+
+footer .links#right img {
+    height: 30px;
 }
