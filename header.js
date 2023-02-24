@@ -16,7 +16,7 @@ function account() {
 }
 window.onscroll = scroll;
 function scroll() {
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 100) {
         document.querySelector('header nav').classList.add('scroll');
     }
     else {
