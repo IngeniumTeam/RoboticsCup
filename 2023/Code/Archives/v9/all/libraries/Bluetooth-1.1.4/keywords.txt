@@ -1,0 +1,35 @@
+#######################################
+# Syntax Coloring Map
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Bluetooth   KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+receive     KEYWORD2
+send        KEYWORD2
+empty       KEYWORD2
+read        KEYWORD2
+print       KEYWORD2
+println     KEYWORD2
+
+#######################################
+# Variables (KEYWORD3)
+#######################################
+
+message     KEYWORD3
+RXpin       KEYWORD3
+TXpin       KEYWORD3
+bauds       KEYWORD3
+serial      KEYWORD3
+json        KEYWORD3
+
+######################################
+# Constants (LITERAL1)
+#######################################
