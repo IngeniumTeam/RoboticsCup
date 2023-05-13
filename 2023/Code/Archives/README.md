@@ -15,7 +15,9 @@ These ZIPs contain all the libraries (to be put in the Arduino libraries folder)
 * [v5 - 2023.1.22](./v5) <span id="stable"></span>
 * [v6 - 2023.2.6](./v6) <span id="beta"></span>
 * [v7 - 2023.2.16](./v7) <span id="beta"></span>
-* [v8 - 2023.3.16](./v8) <span id="stable"></span> <span id="latest"></span>
+* [v8 - 2023.3.16](./v8) <span id="stable">
+* [v9 - 2023.4.13](./v9) <span id="stable">
+* [v10 - 2023.5.11](./v10) <span id="stable"></span> <span id="latest"></span>
 
 <style>
     #warning::after
