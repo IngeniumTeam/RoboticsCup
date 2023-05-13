@@ -11,7 +11,7 @@ set repos=%owner%/Bull %owner%/Dozer %owner%/Superbowl
 ))
 set /p confirm=This program will download and extract the above list of releases in the specified path. Press ENTER to confirm.
 (for %%a in (%libs%) do (
-    powershell -ExecutionPolicy bypass -Command "Invoke-WebRequest https://github.com/%%a/archive/refs/tags/$((Invoke-WebRequest -URI https://api.github.com/repos/%%a/releases/latest | ConvertFrom-Json).tag_name).zip -OutFile lib.zip; Expand-Archive lib.zip -DestinationPath %sketchPath%/libraries -Force"
+    powershell -ExecutionPolicy bypass -Command "Invoke-WebRequest https://github.com/%%a/archive/refs/tags/$((Invoke-WebRequest -URI https://api.github.com/repos/%%a/releases/latest -UseBasicParse | ConvertFrom-Json).tag_name).zip -OutFile lib.zip -UseBasicParse; Expand-Archive lib.zip -DestinationPath %sketchPath%/libraries -Force"
 ))
 (for %%a in (%repos%) do (
     powershell -ExecutionPolicy bypass -Command "$name=('%%a' -split '/')[1]; $tag=(Invoke-WebRequest -URI https://api.github.com/repos/%%a/releases/latest | ConvertFrom-Json).tag_name; Invoke-WebRequest https://github.com/%%a/archive/refs/tags/$($tag).zip -OutFile lib.zip; Expand-Archive lib.zip -DestinationPath %sketchPath%/ -Force"
