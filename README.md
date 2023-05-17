@@ -14,6 +14,6 @@
 [Font](./Font/) The official font of the team
 
 ## Pages
-* [Bull](./Bull/): The remote control
-* [Dozer](./Dozer/): The robot
-* [Superbowl](./Superbowl/): The basket
+* [Bull](./Bull/) The remote control
+* [Dozer](./Dozer/) The robot
+* [Superbowl](./Superbowl/) The basket
