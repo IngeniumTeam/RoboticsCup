@@ -36,7 +36,7 @@ async function updateFileContent(owner, repo, filePath, accessToken, data, lang,
     }
     const updatedContent = new XMLSerializer().serializeToString(doc);
     console.log(updatedContent);
-    const encodedContent = btoa(updatedContent.replace('Â', ''));
+    const encodedContent = stringToBase64(updatedContent);
     await updateFileContent(owner, repo, filePath, accessToken, fileData, 'HTML Update', date, place, encodedContent);
     const commitMessage = `Update ${lang}/index.html ${date}`;
     const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`, {
@@ -75,3 +75,20 @@ document.querySelector('form').onsubmit = async function () {
         alert(error.message);
     }
 };
+
+function stringToUtf8Bytes(str) {
+    const utf8Encoder = new TextEncoder('utf-8');
+    return utf8Encoder.encode(str);
+  }
+  
+  function uint8ArrayToBase64(uint8Array) {
+    const byteArray = Array.from(uint8Array);
+    const binaryString = String.fromCharCode.apply(null, byteArray);
+    return btoa(binaryString);
+  }
+  
+  function stringToBase64(str) {
+    const utf8Bytes = stringToUtf8Bytes(str);
+    return uint8ArrayToBase64(utf8Bytes);
+  }
+  
