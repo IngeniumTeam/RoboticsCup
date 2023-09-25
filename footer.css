@@ -26,15 +26,17 @@ footer .links a img {
     margin: 10px;
 }
 
-footer .links#left {
+footer .links.left {
     left: 0;
 }
 
-footer .links#right {
+footer .links.right {
     right: 0;
-    padding: 0 20px;
 }
 
-footer .links#right img {
-    height: 60px;
+@media(max-width: 800px) {
+    footer .links {
+        position: initial;
+        justify-content: center;
+    }    
 }

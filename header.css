@@ -1,7 +1,7 @@
 :root {
     --top-nav-color: #fff;
-    --top-nav-background-color: #00000030;
-    --top-caption-color: #fff;
+    --top-nav-background-color: transparent;
+    --top-caption-color: #ccc;
     --scroll-nav-color: #fff;
     --scroll-nav-background-color: #000000;
     --scroll-caption-color: #ccc;
@@ -15,11 +15,14 @@ header {
     text-align: center;
     z-index: 0;
     background-color: #000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 header img {
-    height: 100%;
-    max-width: 100%;
+    width: 100%;
 }
 
 header nav {
@@ -63,14 +66,27 @@ header nav .title {
     margin: auto 0;
 }
 
-header nav .title #scroller {
-    margin-top: 10px;
+header nav .title .scroller {
+    margin: 0 calc(50% - 15.5px);
+    position: absolute;
+    bottom: 20px;
     font-size: 9px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-decoration: none;
     color: inherit;
     justify-content: center;
+}
+
+header nav .title .scroller:hover {
+    transition: bottom 1000ms;
+    bottom: 10px;
+}
+
+header nav .title .scroller:hover .material-symbols-outlined {
+    transition: margin-top 1000ms;
+    margin-top: 10px;
 }
 
 header nav ul {
@@ -100,7 +116,7 @@ header nav.scroll .title {
     flex-direction: row;
 }
 
-header nav.scroll .title #scroller {
+header nav.scroll .title .scroller {
     display: none;
 }
 
@@ -186,19 +202,13 @@ header nav .logo .account table .logout {
 header nav .hamburg {
     display: none;
     float: right;
-    margin: 10px 26px;
-    padding: 10px 10px;
-    width: 24px;
-    height: 24px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 26px;
-    cursor: pointer;
-    border-radius: 50%;
 }
 
-header nav .hamburg:hover {
-    background-color: #ccc;
+header nav .hamburg span {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 @media(max-width: 800px) {

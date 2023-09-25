@@ -1,6 +1,7 @@
 .carousel {
     width: 100%;
-    height: 100vh;
+    max-width: 100vh;
+    height: calc(100vh - 359px);
     overflow: hidden;
     position: relative;
 }
@@ -47,4 +48,10 @@
 
 .carousel-control.next {
     right: 0;
+}
+
+@media(max-width: 800px) {
+    .carousel {
+        height: calc(100vh - 381px);
+    }
 }
