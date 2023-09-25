@@ -17,7 +17,6 @@ async function getCurrentFileContent(owner, repo, filePath, accessToken) {
 
 async function updateFileContent(owner, repo, filePath, accessToken, data, lang, date, place, content) {
     const currentContent = atob(data.content);
-    const fileData = await getCurrentFileContent(owner, repo, filePath, accessToken);
     const parser = new DOMParser();
     const doc = parser.parseFromString(currentContent, 'text/html');
     const eventsContainer = doc.querySelector('.events');
