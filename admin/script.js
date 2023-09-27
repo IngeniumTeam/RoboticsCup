@@ -17,6 +17,9 @@ async function getCurrentFileContent(owner, repo, filePath, accessToken) {
 
 async function updateFileContent(owner, repo, filePath, accessToken, data, lang, date, place, content) {
     const currentContent = JSON.parse(atob(data.content));
+    if (!currentContent[date]) {
+        currentContent[date] = {};
+    }
     if (place != '') {
         currentContent[date]['place'] = place;
     }
