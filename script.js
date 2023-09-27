@@ -3,8 +3,6 @@ window.addEventListener('DOMContentLoaded', function () {
     this.fetch('/admin/db.json').then((response) => { return response.json(); }).then((json) => {
         eventss.forEach((events) => {
             for (const [key, eventData] of Object.entries(json[events.getAttribute('data-year')])) {
-                console.log(key);
-                console.log(eventData);
                 const event = this.document.createElement('div');
                 event.classList = 'event';
                 const date = this.document.createElement('input');
@@ -14,10 +12,10 @@ window.addEventListener('DOMContentLoaded', function () {
                 date.value = key;
                 const place = this.document.createElement('span');
                 place.classList = 'place';
-                place.textContent = eventData.place;
+                place.innerHTML = eventData.place;
                 const content = this.document.createElement('span');
                 content.classList = 'content';
-                content.textContent = eventData[this.document.documentElement.getAttribute('lang')];
+                content.innerHTML = eventData[this.document.documentElement.getAttribute('lang')];
                 events.appendChild(event);
                 event.appendChild(date);
                 event.appendChild(place);
