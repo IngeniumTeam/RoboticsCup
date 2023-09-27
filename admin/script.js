@@ -16,25 +16,12 @@ async function getCurrentFileContent(owner, repo, filePath, accessToken) {
 }
 
 async function updateFileContent(owner, repo, filePath, accessToken, data, lang, date, place, content) {
-    const currentContent = atob(data.content);
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(currentContent, 'text/html');
-    const eventsContainer = doc.querySelector('.events');
-    const newEventDiv = document.createElement('div');
-    newEventDiv.classList.add('event');
-    newEventDiv.innerHTML = `
-    <input type="date" value="${date}" readonly class="date">
-    <span class="place">${place}</span>
-    <span class="content">${content}</span>
-  `;
-    const existingEvent = eventsContainer.querySelector(`.event input.date[value="${date}"]`);
-    if (existingEvent) {
-        existingEvent.closest('.event').replaceWith(newEventDiv);
-    } else {
-        eventsContainer.appendChild(newEventDiv);
+    const currentContent = JSON.parse(atob(data.content));
+    if (place != '') {
+        currentContent[date]['place'] = place;
     }
-    const updatedContent = new XMLSerializer().serializeToString(doc);
-    const encodedContent = stringToBase64(updatedContent);
+    currentContent[date][lang] = content;
+    const encodedContent = btoa(JSON.stringify(currentContent));
     const commitMessage = `Update ${lang}/index.html ${date}`;
     const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`, {
         method: 'PUT',
@@ -73,18 +60,18 @@ document.querySelector('form').onsubmit = async function () {
     }
 };
 
-function stringToUtf8Bytes(str) {
-    const utf8Encoder = new TextEncoder('utf-8');
-    return utf8Encoder.encode(str);
-}
+// function stringToUtf8Bytes(str) {
+//     const utf8Encoder = new TextEncoder('utf-8');
+//     return utf8Encoder.encode(str);
+// }
 
-function uint8ArrayToBase64(uint8Array) {
-    const byteArray = Array.from(uint8Array);
-    const binaryString = String.fromCharCode.apply(null, byteArray);
-    return btoa(binaryString);
-}
+// function uint8ArrayToBase64(uint8Array) {
+//     const byteArray = Array.from(uint8Array);
+//     const binaryString = String.fromCharCode.apply(null, byteArray);
+//     return btoa(binaryString);
+// }
 
-function stringToBase64(str) {
-    const utf8Bytes = stringToUtf8Bytes(str);
-    return uint8ArrayToBase64(utf8Bytes);
-}
+// function stringToBase64(str) {
+//     const utf8Bytes = stringToUtf8Bytes(str);
+//     return uint8ArrayToBase64(utf8Bytes);
+// }
