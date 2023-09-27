@@ -2,7 +2,9 @@ window.addEventListener('DOMContentLoaded', function () {
     const eventss = this.document.querySelectorAll('.events');
     this.fetch('/admin/db.json').then((response) => { return response.json(); }).then((json) => {
         eventss.forEach((events) => {
-            json[events.getAttribute('data-year')].forEach((key, eventData) => {
+            for (const [key, eventData] of Object.entries(json[events.getAttribute('data-year')])) {
+                console.log(key);
+                console.log(eventData);
                 const event = this.document.createElement('div');
                 event.classList = 'event';
                 const date = this.document.createElement('input');
@@ -20,7 +22,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 event.appendChild(date);
                 event.appendChild(place);
                 event.appendChild(content);
-            });
+            }
         });
     });
 });
