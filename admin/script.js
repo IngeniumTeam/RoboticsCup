@@ -53,7 +53,7 @@ document.querySelector('form').onsubmit = async function () {
         return;
     }
     try {
-        const fileData = await getCurrentFileContent('IngeniumTeam', 'ingeniumteam.github.io', fd.get('lang') + '/index.html', ACCESS_TOKEN);
+        const fileData = await getCurrentFileContent('IngeniumTeam', 'ingeniumteam.github.io', 'admin/db.json', ACCESS_TOKEN);
         await updateFileContent('IngeniumTeam', 'ingeniumteam.github.io', 'admin/db.json', ACCESS_TOKEN, fileData, fd.get('lang'), fd.get('date'), fd.get('place'), fd.get('content'));
     } catch (error) {
         alert(error.message);
