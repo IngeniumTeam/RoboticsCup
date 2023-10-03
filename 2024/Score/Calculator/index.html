@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../score.js"></script>
+    <title>Score Calculator</title>
+</head>
+
+<body>
+    <form id="form" method="dialog"
+        onsubmit="calculateFromForm(this, document.getElementById('cakesTotal'), document.getElementById('basketTotal'), document.getElementById('funnyActionTotal'), document.getElementById('bonus'), document.getElementById('rawTotal'), document.getElementById('total'))">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2" class="h1">Team</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th colspan="2" class="h2">Cakes</th>
+                </tr>
+                <tr>
+                    <th>Legendary recipe</th>
+                    <td>
+                        <input type="number" name="cakesLegendaryRecipe" form="form" min="0" value="0" max="12">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Layers</th>
+                    <td>
+                        <input type="number" name="cakesLayers" form="form" min="0" value="0" max="36">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Cherries</th>
+                    <td>
+                        <input type="number" name="cakesCherries" form="form" min="0" value="0" max="36">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <td>
+                        <input type="number" id="cakesTotal" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2" class="h2">Basket</th>
+                </tr>
+                <tr>
+                    <th>Present</th>
+                    <td>
+                        <input type="checkbox" name="basketPresent" form="form" checked>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Count is good</th>
+                    <td>
+                        <input type="checkbox" name="basketCountIsGood" form="form" checked>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Cherries number</th>
+                    <td>
+                        <input type="number" name="basketCherries" form="form" min="0" value="0" max="50">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <td>
+                        <input type="number" id="basketTotal" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2" class="h2">Funny action</th>
+                </tr>
+                <tr>
+                    <th>Done</th>
+                    <td>
+                        <input type="checkbox" name="funnyActionDone" form="form" checked>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <td>
+                        <input type="number" id="funnyActionTotal" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2" class="h2">Bonus</th>
+                </tr>
+                <tr>
+                    <th>Estimation</th>
+                    <td>
+                        <input type="number" name="estimation" form="form" min="0" value="0" max="300">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <td>
+                        <input type="number" id="bonus" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2" class="h2">Total</th>
+                </tr>
+                <tr>
+                    <th>Raw</th>
+                    <td>
+                        <input type="number" id="rawTotal" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <input type="submit" value="Calculate">
+                    </th>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <td>
+                        <input type="number" id="total" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <style>
+        table {
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            min-width: 400px;
+        }
+        table th {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: left;
+        }
+        table th.h1 {
+            font-size: 3em;
+            text-align: center;
+        }
+        table th.h2 {
+            font-size: 1.5em;
+            text-align: center;
+        }
+        table td, table th {
+            padding: 3px;
+        }
+        input {
+            font-family: monospace;
+            padding: 3px 10px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+    </style>
+</body>
+
+</html>

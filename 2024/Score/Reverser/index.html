@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../score.js"></script>
+    <title>Score Reverser</title>
+</head>
+
+<body>
+    <form id="form" method="dialog" onsubmit="reverseFromForm(this, document.getElementById('rawTotal'))">
+        <div>
+            <label for="total">Total Score</label>
+            <input type="number" name="total" id="total" min="0" value="0" max="300" class="label">
+        </div>
+        <div>
+            <label for="estimation">Estimation</label>
+            <input type="number" name="estimation" id="estimation" min="0" value="0" max="300" class="label">
+        </div>
+        <div>
+            <input type="submit" value="Reverse">
+        </div>
+        <div>
+            <input type="number" id="rawTotal" min="0" max="300" readonly>
+        </div>
+    </form>
+    <style>
+        form {
+            margin: 20px 20%;
+            width: 60%;
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+        }
+
+        form * {
+            padding: 3px 10px;
+            box-sizing: border-box;
+            /* display: inline-block; */
+        }
+
+        input {
+            width: 100%;
+        }
+
+        input.label {
+            width: 70%;
+        }
+
+        label {
+            width: 30%;
+        }
+    </style>
+</body>
+
+</html>
