@@ -8,7 +8,7 @@ These ZIPs contain all the libraries (to be put in the Arduino libraries folder)
 <span id="warning"></span> If one of those archive contains the library `ArduinoJson-6.20` and higher, delete it and download the 6.19 or lower version from the Library Manager.
 
 ## Archives list
-* [v1 - 2022.12.3](./v1) <span id="stable"></span>
+* [v1 - 2023.10.30](./v1) <span id="beta"></span>
 
 <style>
     #warning::after
