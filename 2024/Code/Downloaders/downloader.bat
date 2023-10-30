@@ -1,7 +1,7 @@
 @ECHO OFF
 set /p sketchPath=Please enter the full path of the arduino sketchbook: 
-set libs=IngeniumTeam/BlackLineSensor IngeniumTeam/Bluetooth IngeniumTeam/Button IngeniumTeam/Cherry IngeniumTeam/HCSR04 IngeniumTeam/Joystick IngeniumTeam/Led IngeniumTeam/Mecanum IngeniumTeam/Motor IngeniumTeam/PhotoElectric IngeniumTeam/Digit IngeniumTeam/Potentiometer IngeniumTeam/Report SimonPucheu/Timino bblanchon/ArduinoJson Chris--A/Keypad avishorp/TM1637
-set repos=IngeniumTeam/Bull IngeniumTeam/Dozer IngeniumTeam/Superbowl
+set libs=IngeniumTeam/BlackLineSensor IngeniumTeam/Bluetooth IngeniumTeam/Button IngeniumTeam/Cherry IngeniumTeam/HCSR04 IngeniumTeam/Joystick IngeniumTeam/Led IngeniumTeam/Mecanum IngeniumTeam/Motor IngeniumTeam/StepperMotor IngeniumTeam/Digit IngeniumTeam/Potentiometer IngeniumTeam/Report SimonPucheu/Timino bblanchon/ArduinoJson Chris--A/Keypad avishorp/TM1637 waspinator/AccelStepper
+set repos=IngeniumTeam/Bull IngeniumTeam/Dozer24
 (for %%a in (%libs%) do (
     echo %%a
 ))
