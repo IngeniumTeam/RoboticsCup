@@ -11,7 +11,7 @@
 
 <body>
     <form id="form" method="dialog"
-        onsubmit="calculateFromForm(this, document.getElementById('cakesTotal'), document.getElementById('basketTotal'), document.getElementById('funnyActionTotal'), document.getElementById('bonus'), document.getElementById('rawTotal'), document.getElementById('total'))">
+        onsubmit="calculateFromForm(this, document.getElementById('planteTotal'), document.getElementById('pamiTotal'), document.getElementById('panneauSolaireTotal'), document.getElementById('bonus'), document.getElementById('rawTotal'), document.getElementById('total'))">
         <table>
             <thead>
                 <tr>
@@ -20,72 +20,66 @@
             </thead>
             <tbody>
                 <tr>
-                    <th colspan="2" class="h2">Cakes</th>
+                    <th colspan="2" class="h2">Plantes</th>
                 </tr>
                 <tr>
-                    <th>Legendary recipe</th>
+                    <th>Plante</th>
                     <td>
-                        <input type="number" name="cakesLegendaryRecipe" form="form" min="0" value="0" max="12">
+                        <input type="number" name="plante" form="form" min="0" value="0" max="36">
                     </td>
                 </tr>
                 <tr>
-                    <th>Layers</th>
+                    <th>Dans un pot</th>
                     <td>
-                        <input type="number" name="cakesLayers" form="form" min="0" value="0" max="36">
+                        <input type="number" name="pot" form="form" min="0" value="0" max="36">
                     </td>
                 </tr>
                 <tr>
-                    <th>Cherries</th>
+                    <th>Dans une jardinière</th>
                     <td>
-                        <input type="number" name="cakesCherries" form="form" min="0" value="0" max="36">
-                    </td>
-                </tr>
-                <tr>
-                    <th>Total</th>
-                    <td>
-                        <input type="number" id="cakesTotal" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <th colspan="2" class="h2">Basket</th>
-                </tr>
-                <tr>
-                    <th>Present</th>
-                    <td>
-                        <input type="checkbox" name="basketPresent" form="form" checked>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Count is good</th>
-                    <td>
-                        <input type="checkbox" name="basketCountIsGood" form="form" checked>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Cherries number</th>
-                    <td>
-                        <input type="number" name="basketCherries" form="form" min="0" value="0" max="50">
+                        <input type="number" name="jardiniere" form="form" min="0" value="0" max="36">
                     </td>
                 </tr>
                 <tr>
                     <th>Total</th>
                     <td>
-                        <input type="number" id="basketTotal" readonly>
+                        <input type="number" id="planteTotal" readonly>
                     </td>
                 </tr>
                 <tr>
-                    <th colspan="2" class="h2">Funny action</th>
+                    <th colspan="2" class="h2">PAMIs</th>
                 </tr>
                 <tr>
-                    <th>Done</th>
+                    <th>Présent dans une zone</th>
                     <td>
-                        <input type="checkbox" name="funnyActionDone" form="form" checked>
+                        <input type="number" name="pami" form="form" min="0" value="0" max="6">
+                    </td>
+                </tr>
+                <tr>
+                    <th>En contact</th>
+                    <td>
+                        <input type="number" name="pamiContact" form="form" min="0" value="0" max="6">
                     </td>
                 </tr>
                 <tr>
                     <th>Total</th>
                     <td>
-                        <input type="number" id="funnyActionTotal" readonly>
+                        <input type="number" id="pamiTotal" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2" class="h2">Panneaux solaires</th>
+                </tr>
+                <tr>
+                    <th>Fait</th>
+                    <td>
+                        <input type="number" name="panneauSolaire" form="form" min="0" value="0" max="6">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <td>
+                        <input type="number" id="panneauSolaireTotal" readonly>
                     </td>
                 </tr>
                 <tr>

@@ -1,9 +1,9 @@
-function calculateFromForm(form, cakesTotal, basketTotal, funnyActionTotal, bonus, rawTotal, total) {
+function calculateFromForm(form, planteTotal, pamiTotal, panneauSolaireTotal, bonus, rawTotal, total) {
     const formData = new FormData(form);
-    const calcul = calculate(parseInt(formData.get('cakesLegendaryRecipe')), parseInt(formData.get('cakesLayers')), parseInt(formData.get('cakesCherries')), Boolean(formData.get('basketPresent')), Boolean(formData.get('basketCountIsGood')), parseInt(formData.get('basketCherries')), Boolean(formData.get('funnyActionDone')), parseInt(formData.get('estimation')));
-    cakesTotal.value = calcul.cakesTotal;
-    basketTotal.value = calcul.basketTotal;
-    funnyActionTotal.value = calcul.funnyActionTotal;
+    const calcul = calculate(parseInt(formData.get('plante')), parseInt(formData.get('pot')),parseInt(formData.get('jardiniere')), parseInt(formData.get('pami')), parseInt(formData.get('pamiContact')), parseInt(formData.get('panneauSolaire')), parseInt(formData.get('estimation')));
+    planteTotal.value = calcul.planteTotal;
+    pamiTotal.value = calcul.pamiTotal;
+    panneauSolaireTotal.value = calcul.panneauSolaireTotal;
     bonus.value = calcul.bonus;
     rawTotal.value = calcul.rawTotal;
     total.value = calcul.total;
@@ -14,14 +14,14 @@ function reverseFromForm(form, rawTotal) {
     rawTotal.value = revere(parseInt(formData.get('total')), parseInt(formData.get('estimation'))).rawTotal;
 }
 
-function calculate(cakesLegendaryRecipe, cakesLayers, cakesCherries, basketPresent, basketCountIsGood, basketCherries, funnyActionDone, estimation) {
-    const cakesTotal = (cakesLegendaryRecipe * 4) + cakesLayers + (cakesCherries * 3);
-    const basketTotal = (basketPresent * 5) + ((basketCountIsGood && basketCherries > 0) * 5) + basketCherries;
-    const funnyActionTotal = (funnyActionDone * 5);
-    const rawTotal = cakesTotal + basketTotal + funnyActionTotal;
+function calculate(plante, pot, jardiniere, pami, pamiContact, panneauSolaire, estimation) {
+    const planteTotal = plante + (pot * 3) + jardiniere;
+    const pamiTotal = (pami + pamiContact) * 5;
+    const panneauSolaireTotal = panneauSolaire * 5;
+    const rawTotal = planteTotal + pamiTotal + panneauSolaireTotal;
     const bonus = calculateBonus(rawTotal, estimation).bonus;
     const total = calculateBonus(rawTotal, estimation).total;
-    return { cakesTotal: cakesTotal, basketTotal: basketTotal, funnyActionTotal: funnyActionTotal, bonus: bonus, rawTotal: rawTotal, total: total };
+    return { planteTotal: planteTotal, pamiTotal: pamiTotal, panneauSolaireTotal: panneauSolaireTotal, bonus: bonus, rawTotal: rawTotal, total: total };
 }
 
 function calculateBonus(rawTotal, estimation) {
