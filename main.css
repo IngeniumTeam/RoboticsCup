@@ -40,6 +40,10 @@ main li {
     margin: 30px 0;
 }
 
+.place {
+    margin-right: 15px;
+}
+
 main h2,
 section#images {
     padding-top: 120px;
