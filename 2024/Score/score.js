@@ -15,12 +15,12 @@ function reverseFromForm(form, rawTotal) {
 }
 
 function calculate(plante, pot, jardiniere, pami, pamiContact, panneauSolaire, estimation) {
-    const planteTotal = plante + (pot * 3) + jardiniere;
+    const planteTotal = (plante * 3) + pot + jardiniere;
     const pamiTotal = (pami + pamiContact) * 5;
     const panneauSolaireTotal = panneauSolaire * 5;
-    const rawTotal = planteTotal + pamiTotal + panneauSolaireTotal;
+    const rawTotal = planteTotal + panneauSolaireTotal + 10;
     const bonus = calculateBonus(rawTotal, estimation).bonus;
-    const total = calculateBonus(rawTotal, estimation).total;
+    const total = calculateBonus(rawTotal, estimation).total + pamiTotal + 1;
     return { planteTotal: planteTotal, pamiTotal: pamiTotal, panneauSolaireTotal: panneauSolaireTotal, bonus: bonus, rawTotal: rawTotal, total: total };
 }
 
